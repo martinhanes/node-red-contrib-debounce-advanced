@@ -1,17 +1,19 @@
 {
-  "name": "node-red-contrib-debounce",
-  "version": "0.0.2",
-  "author": "Anthony Giniers",
-  "description": "A debounce node for node-red",
+  "name": "node-red-contrib-debounce-leading-trailing",
+  "version": "0.0.3",
+  "author": "Martin Hanes",
+  "description": "A debounce node for node-red, with support for leading/trailing, and with support of time units.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antogyn/node-red-contrib-debounce.git"
+    "url": "git@github.com:martinhanes/node-red-contrib-debounce-leading-trailing.git"
   },
   "dependencies": {},
   "keywords": [
     "node-red",
-    "debounce"
+    "debounce",
+    "leading",
+    "trailing"
   ],
   "node-red": {
     "nodes": {
