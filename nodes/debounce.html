@@ -27,8 +27,40 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="debounce-advanced">
-    <p>Debounce</p>
+<script type="text/markdown" data-help-name="debounce-advanced">
+    Debounce node that has two modes:
+
+    - leading
+    - trailing
+
+
+    ### Trailing (delayed):
+    Waits first for given amount of time, then fire. If new event comes while waiting, the timer is reset.
+
+    ### Leading (immediate):
+    Fires event first, then waits for a given amount of time during which it delays the next event. If the third event comes during the delay
+    phase, it's ignored (debounced).
+
+    ## Configuration
+
+    ### Time
+
+    - Type: `integer`
+
+    The amount of time to delay / debounce events.
+
+    ### Time unit
+
+    - Type: `enum`
+
+    Unit of time selected for the time field.
+
+    ### Type
+
+    - Type: `enum`
+
+    The delay / debounce mode selection - trailing or leading.
+
 </script>
 
 <script type="text/javascript">
