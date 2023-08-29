@@ -1,5 +1,5 @@
 module.exports = function(RED) {
-    function DebounceLeadingTrailingNode(config) {
+    function DebounceAdvancedNode(config) {
 
         RED.nodes.createNode(this, config);
         this.timeunit = config.timeunit || 's';
@@ -50,5 +50,5 @@ module.exports = function(RED) {
         });
     }
 
-    RED.nodes.registerType('debounce-leading-trailing', DebounceLeadingTrailingNode);
+    RED.nodes.registerType('debounce-advanced', DebounceAdvancedNode);
 };
