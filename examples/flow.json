@@ -1,0 +1,154 @@
+[
+  {
+    "id": "10ce0ccb784407a9",
+    "type": "tab",
+    "label": "Flow 1",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "b2e504889f90434b",
+    "type": "inject",
+    "z": "10ce0ccb784407a9",
+    "name": "button event",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 510,
+    "y": 180,
+    "wires": [
+      [
+        "b818e7a833530566"
+      ]
+    ]
+  },
+  {
+    "id": "b818e7a833530566",
+    "type": "debounce-advanced",
+    "z": "10ce0ccb784407a9",
+    "time": 5,
+    "timeunit": "s",
+    "debouncetype": "trailing",
+    "name": "",
+    "x": 670,
+    "y": 180,
+    "wires": [
+      [
+        "1e966e889d88f842"
+      ]
+    ]
+  },
+  {
+    "id": "1e966e889d88f842",
+    "type": "debug",
+    "z": "10ce0ccb784407a9",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 830,
+    "y": 180,
+    "wires": []
+  },
+  {
+    "id": "6f8f2b940d1bb018",
+    "type": "comment",
+    "z": "10ce0ccb784407a9",
+    "name": "fire 5 seconds after the last button event [trailing]",
+    "info": "",
+    "x": 600,
+    "y": 140,
+    "wires": []
+  },
+  {
+    "id": "43bcf37c2a23e06f",
+    "type": "inject",
+    "z": "10ce0ccb784407a9",
+    "name": "frequent event generator (every 2s)",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "2",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 580,
+    "y": 340,
+    "wires": [
+      [
+        "8c5a6092edbd5ab1"
+      ]
+    ]
+  },
+  {
+    "id": "8c5a6092edbd5ab1",
+    "type": "debounce-advanced",
+    "z": "10ce0ccb784407a9",
+    "time": 5,
+    "timeunit": "s",
+    "debouncetype": "leading",
+    "name": "",
+    "x": 810,
+    "y": 340,
+    "wires": [
+      [
+        "961620b29d1d51b4"
+      ]
+    ]
+  },
+  {
+    "id": "961620b29d1d51b4",
+    "type": "debug",
+    "z": "10ce0ccb784407a9",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 990,
+    "y": 340,
+    "wires": []
+  },
+  {
+    "id": "f5c10f765edf6712",
+    "type": "comment",
+    "z": "10ce0ccb784407a9",
+    "name": "prevent events to fire more often than once every 5 seconds, first event without delay [leading]",
+    "info": "",
+    "x": 740,
+    "y": 300,
+    "wires": []
+  }
+]
