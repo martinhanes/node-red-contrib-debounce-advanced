@@ -1,6 +1,6 @@
 [
   {
-    "id": "10ce0ccb784407a9",
+    "id": "eba5d1395bb27ee3",
     "type": "tab",
     "label": "Flow 1",
     "disabled": false,
@@ -8,9 +8,9 @@
     "env": []
   },
   {
-    "id": "b2e504889f90434b",
+    "id": "f13ca9d029fd3f48",
     "type": "inject",
-    "z": "10ce0ccb784407a9",
+    "z": "eba5d1395bb27ee3",
     "name": "button event",
     "props": [
       {
@@ -28,34 +28,34 @@
     "topic": "",
     "payload": "",
     "payloadType": "date",
-    "x": 510,
-    "y": 180,
+    "x": 450,
+    "y": 80,
     "wires": [
       [
-        "b818e7a833530566"
+        "034b4c7910b5aeaa"
       ]
     ]
   },
   {
-    "id": "b818e7a833530566",
+    "id": "034b4c7910b5aeaa",
     "type": "debounce-advanced",
-    "z": "10ce0ccb784407a9",
+    "z": "eba5d1395bb27ee3",
     "time": 5,
     "timeunit": "s",
     "debouncetype": "trailing",
     "name": "",
-    "x": 670,
-    "y": 180,
+    "x": 610,
+    "y": 80,
     "wires": [
       [
-        "1e966e889d88f842"
+        "66e6665bbea1ee30"
       ]
     ]
   },
   {
-    "id": "1e966e889d88f842",
+    "id": "66e6665bbea1ee30",
     "type": "debug",
-    "z": "10ce0ccb784407a9",
+    "z": "eba5d1395bb27ee3",
     "name": "",
     "active": true,
     "tosidebar": true,
@@ -65,24 +65,24 @@
     "targetType": "msg",
     "statusVal": "",
     "statusType": "auto",
-    "x": 830,
-    "y": 180,
+    "x": 770,
+    "y": 80,
     "wires": []
   },
   {
-    "id": "6f8f2b940d1bb018",
+    "id": "1914a38af26504b2",
     "type": "comment",
-    "z": "10ce0ccb784407a9",
+    "z": "eba5d1395bb27ee3",
     "name": "fire 5 seconds after the last button event [trailing]",
     "info": "",
-    "x": 600,
-    "y": 140,
+    "x": 540,
+    "y": 40,
     "wires": []
   },
   {
-    "id": "43bcf37c2a23e06f",
+    "id": "a61eed7029beb044",
     "type": "inject",
-    "z": "10ce0ccb784407a9",
+    "z": "eba5d1395bb27ee3",
     "name": "frequent event generator (every 2s)",
     "props": [
       {
@@ -93,41 +93,41 @@
         "vt": "str"
       }
     ],
-    "repeat": "2",
+    "repeat": "",
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
     "topic": "",
     "payload": "",
     "payloadType": "date",
-    "x": 580,
-    "y": 340,
+    "x": 520,
+    "y": 240,
     "wires": [
       [
-        "8c5a6092edbd5ab1"
+        "705b4801e655f4fb"
       ]
     ]
   },
   {
-    "id": "8c5a6092edbd5ab1",
+    "id": "705b4801e655f4fb",
     "type": "debounce-advanced",
-    "z": "10ce0ccb784407a9",
+    "z": "eba5d1395bb27ee3",
     "time": 5,
     "timeunit": "s",
     "debouncetype": "leading",
     "name": "",
-    "x": 810,
-    "y": 340,
+    "x": 750,
+    "y": 240,
     "wires": [
       [
-        "961620b29d1d51b4"
+        "079fbf4b68631166"
       ]
     ]
   },
   {
-    "id": "961620b29d1d51b4",
+    "id": "079fbf4b68631166",
     "type": "debug",
-    "z": "10ce0ccb784407a9",
+    "z": "eba5d1395bb27ee3",
     "name": "",
     "active": true,
     "tosidebar": true,
@@ -137,18 +137,566 @@
     "targetType": "msg",
     "statusVal": "",
     "statusType": "auto",
-    "x": 990,
-    "y": 340,
+    "x": 930,
+    "y": 240,
     "wires": []
   },
   {
-    "id": "f5c10f765edf6712",
+    "id": "a863308e4debee54",
     "type": "comment",
-    "z": "10ce0ccb784407a9",
+    "z": "eba5d1395bb27ee3",
     "name": "prevent events to fire more often than once every 5 seconds, first event without delay [leading]",
     "info": "",
-    "x": 740,
-    "y": 300,
+    "x": 680,
+    "y": 200,
+    "wires": []
+  },
+  {
+    "id": "54e1f34650edc67a",
+    "type": "inject",
+    "z": "eba5d1395bb27ee3",
+    "name": "button event",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 450,
+    "y": 380,
+    "wires": [
+      [
+        "299be5099b74d290",
+        "e6a0dd90a7381c23"
+      ]
+    ]
+  },
+  {
+    "id": "299be5099b74d290",
+    "type": "debounce-advanced",
+    "z": "eba5d1395bb27ee3",
+    "time": "10",
+    "timeunit": "s",
+    "debouncetype": "trailing",
+    "name": "timer to be flushed sooner",
+    "x": 970,
+    "y": 380,
+    "wires": [
+      [
+        "78c6524c1c2e53cd"
+      ]
+    ]
+  },
+  {
+    "id": "78c6524c1c2e53cd",
+    "type": "debug",
+    "z": "eba5d1395bb27ee3",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1190,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "e6a0dd90a7381c23",
+    "type": "delay",
+    "z": "eba5d1395bb27ee3",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "3",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 620,
+    "y": 420,
+    "wires": [
+      [
+        "19a0289fd3e77259"
+      ]
+    ]
+  },
+  {
+    "id": "19a0289fd3e77259",
+    "type": "function",
+    "z": "eba5d1395bb27ee3",
+    "name": "flush",
+    "func": "msg.flush = true;\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 750,
+    "y": 420,
+    "wires": [
+      [
+        "299be5099b74d290"
+      ]
+    ]
+  },
+  {
+    "id": "945f91c2c98e0840",
+    "type": "inject",
+    "z": "eba5d1395bb27ee3",
+    "name": "button event",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 450,
+    "y": 560,
+    "wires": [
+      [
+        "e349de1b81769873",
+        "17565bcdd29f41d8"
+      ]
+    ]
+  },
+  {
+    "id": "e349de1b81769873",
+    "type": "debounce-advanced",
+    "z": "eba5d1395bb27ee3",
+    "time": "10",
+    "timeunit": "s",
+    "debouncetype": "trailing",
+    "name": "timer to be reset sooner",
+    "x": 960,
+    "y": 560,
+    "wires": [
+      [
+        "cdfeed924a1811de"
+      ]
+    ]
+  },
+  {
+    "id": "cdfeed924a1811de",
+    "type": "debug",
+    "z": "eba5d1395bb27ee3",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1190,
+    "y": 560,
+    "wires": []
+  },
+  {
+    "id": "17565bcdd29f41d8",
+    "type": "delay",
+    "z": "eba5d1395bb27ee3",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "3",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 620,
+    "y": 600,
+    "wires": [
+      [
+        "426305eaf7acfb6b"
+      ]
+    ]
+  },
+  {
+    "id": "426305eaf7acfb6b",
+    "type": "function",
+    "z": "eba5d1395bb27ee3",
+    "name": "reset",
+    "func": "msg.reset = true;\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 750,
+    "y": 600,
+    "wires": [
+      [
+        "e349de1b81769873"
+      ]
+    ]
+  },
+  {
+    "id": "2c9a12ca3644c790",
+    "type": "inject",
+    "z": "eba5d1395bb27ee3",
+    "name": "button event",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 690,
+    "y": 340,
+    "wires": [
+      [
+        "299be5099b74d290"
+      ]
+    ]
+  },
+  {
+    "id": "00f6e4b970813ed5",
+    "type": "inject",
+    "z": "eba5d1395bb27ee3",
+    "name": "button event",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 710,
+    "y": 520,
+    "wires": [
+      [
+        "e349de1b81769873"
+      ]
+    ]
+  },
+  {
+    "id": "e492603d5305d078",
+    "type": "inject",
+    "z": "eba5d1395bb27ee3",
+    "name": "button event",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 430,
+    "y": 760,
+    "wires": [
+      [
+        "2b72495e3412496a",
+        "ba94fde1ed3b8bf6"
+      ]
+    ]
+  },
+  {
+    "id": "2b72495e3412496a",
+    "type": "debounce-advanced",
+    "z": "eba5d1395bb27ee3",
+    "time": "10",
+    "timeunit": "s",
+    "debouncetype": "leading",
+    "name": "leading - timer to be reset sooner",
+    "x": 970,
+    "y": 760,
+    "wires": [
+      [
+        "fe1d827a6d65927b"
+      ]
+    ]
+  },
+  {
+    "id": "fe1d827a6d65927b",
+    "type": "debug",
+    "z": "eba5d1395bb27ee3",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1210,
+    "y": 760,
+    "wires": []
+  },
+  {
+    "id": "ba94fde1ed3b8bf6",
+    "type": "delay",
+    "z": "eba5d1395bb27ee3",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "3",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 600,
+    "y": 800,
+    "wires": [
+      [
+        "ad322c92629b6e23"
+      ]
+    ]
+  },
+  {
+    "id": "ad322c92629b6e23",
+    "type": "function",
+    "z": "eba5d1395bb27ee3",
+    "name": "reset",
+    "func": "msg.reset = true;\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 730,
+    "y": 800,
+    "wires": [
+      [
+        "2b72495e3412496a"
+      ]
+    ]
+  },
+  {
+    "id": "d3333d5107c7765f",
+    "type": "inject",
+    "z": "eba5d1395bb27ee3",
+    "name": "button event",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 690,
+    "y": 720,
+    "wires": [
+      [
+        "2b72495e3412496a"
+      ]
+    ]
+  },
+  {
+    "id": "bd310bba890a2a22",
+    "type": "inject",
+    "z": "eba5d1395bb27ee3",
+    "name": "button event",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 430,
+    "y": 940,
+    "wires": [
+      [
+        "0ac5e1f363263a6b",
+        "dc9100b58664a8d7"
+      ]
+    ]
+  },
+  {
+    "id": "0ac5e1f363263a6b",
+    "type": "debounce-advanced",
+    "z": "eba5d1395bb27ee3",
+    "time": "10",
+    "timeunit": "s",
+    "debouncetype": "leading",
+    "name": "leading - timer to be reset sooner",
+    "x": 970,
+    "y": 940,
+    "wires": [
+      [
+        "3326b1ea08254dc1"
+      ]
+    ]
+  },
+  {
+    "id": "dc9100b58664a8d7",
+    "type": "delay",
+    "z": "eba5d1395bb27ee3",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "3",
+    "timeoutUnits": "seconds",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 600,
+    "y": 980,
+    "wires": [
+      [
+        "64e350a88517f709"
+      ]
+    ]
+  },
+  {
+    "id": "64e350a88517f709",
+    "type": "function",
+    "z": "eba5d1395bb27ee3",
+    "name": "flush",
+    "func": "msg.flush = true;\nreturn msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 730,
+    "y": 980,
+    "wires": [
+      [
+        "0ac5e1f363263a6b"
+      ]
+    ]
+  },
+  {
+    "id": "f7ad6edbbc25c9ae",
+    "type": "inject",
+    "z": "eba5d1395bb27ee3",
+    "name": "button event",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 690,
+    "y": 900,
+    "wires": [
+      [
+        "0ac5e1f363263a6b"
+      ]
+    ]
+  },
+  {
+    "id": "3326b1ea08254dc1",
+    "type": "debug",
+    "z": "eba5d1395bb27ee3",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 1210,
+    "y": 940,
     "wires": []
   }
 ]
