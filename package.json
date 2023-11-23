@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-debounce-advanced",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Martin Hanes",
   "homepage": "https://github.com/martinhanes/node-red-contrib-debounce-advanced",
   "description": "A debounce node for node-red, with support for leading/trailing, and with support of time units.",
@@ -23,7 +23,7 @@
     }
   },
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=16.0.0",
     "npm": ">=7.0.0"
   }
 }
